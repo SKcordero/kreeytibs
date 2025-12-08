@@ -1,0 +1,120 @@
+:root {
+  --body-padding-mobile: 16px;
+  --body-padding-desktop: 60px;
+  --font-poppins: "Poppins", sans-serif;
+  --color-gray: #707070;
+}
+
+/* Mobile first */
+body {
+  padding-inline: var(--body-padding-mobile);
+  font-family: var(--font-poppins);
+  color: var(--color-gray);
+  margin: 0;
+}
+
+/* Header Wrapper */
+.site-header {
+  display: flex;
+  flex-direction: column; /* Logo on top */
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  margin: 0;
+}
+
+/* Logo */
+.logo img {
+  height: 60px; /* smaller on mobile */
+  width: auto;
+}
+
+.nav-menu {
+  width: 100%; /* fill the whole width */
+}
+/* Menu - horizontal under logo */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between; /* stretch items equally */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%; /* make ul full width */
+}
+.nav-menu li {
+  text-align: center; /* center the link */
+}
+.nav-menu a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--color-gray) !important;
+  display: block;
+}
+
+/* Last menu item as a button */
+.nav-menu li:last-child > a {
+  background: #b60a1b;
+  color: #fff !important;
+  padding: 4px 14px;
+  border-radius: 25px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.nav-menu li:last-child > a:hover {
+  background: darkred;
+  transform: scale(1.05);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.heading-text {
+  text-align: center;
+}
+
+.heading-text h2 {
+  font-weight: 400;
+  font-size: 26px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  body {
+    padding-inline: var(--body-padding-desktop);
+  }
+
+  .site-header {
+    flex-direction: row; /* logo left, menu right */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 80px; /* bigger on desktop */
+  }
+
+  .nav-menu ul {
+    justify-content: flex-end; /* align menu to right */
+    gap: 40px;
+  }
+
+  .nav-menu a {
+    font-size: 25px;
+  }
+
+  /* Last menu item as a button */
+  .nav-menu li:last-child > a {
+    padding: 4px 32px;
+    border-radius: 25px;
+  }
+
+  .heading-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 33%; /* content width */
+    text-align: center;
+  }
+}
